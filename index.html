@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Designer & Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary-blue: #1e40af;
+            --light-blue: #dbeafe;
+            --dark-blue: #1e3a8a;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .nav-link.active {
+            font-weight: 600;
+            border-bottom: 2px solid var(--primary-blue);
+            color: var(--primary-blue);
+        }
+        
+        .work-item:hover .work-overlay {
+            opacity: 1;
+        }
+        
+        .work-item img {
+            transition: transform 0.3s ease;
+        }
+        
+        .work-item:hover img {
+            transform: scale(1.03);
+        }
+        
+        .blue-gradient {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+        }
+        
+        .blue-accent {
+            color: var(--primary-blue);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white bg-opacity-95 z-50 shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold tracking-tighter">PORT<span class="text-blue-700">FOLIO</span></a>
+            <div class="flex space-x-8">
+                <a href="#about" class="nav-link px-1 py-2 transition-all duration-200" onclick="setActiveNav(this)">About</a>
+                <a href="#work" class="nav-link px-1 py-2 transition-all duration-200" onclick="setActiveNav(this)">Work</a>
+                <a href="#contact" class="nav-link px-1 py-2 transition-all duration-200" onclick="setActiveNav(this)">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about" class="section pt-24 pb-16 px-4">
+        <div class="container mx-auto max-w-4xl">
+            <div class="flex flex-col md:flex-row items-center md:items-start gap-12">
+                <div class="w-48 h-48 rounded-full overflow-hidden flex-shrink-0 border-4 border-blue-700">
+    <img src="FurinaProfile.jpg" alt="Profile Photo" class="w-full h-full object-cover">
+</div>
+                <div class="flex-1">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Hello, I'm <span class="border-b-4 border-blue-700">Yuta Nakazaki</span></h1>
+                    <h2 class="text-xl md:text-2xl text-blue-700 mb-6">Graphic Designer & programmer</h2>
+                    <p class="text-lg leading-relaxed mb-6">
+                        I blend creative design with technical expertise to build beautiful, functional digital experiences. 
+                        With a passion for both visual aesthetics and clean code, I create solutions that not only look 
+                        stunning but also perform flawlessly.
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-medium">UI/UX Design</span>
+                        <span class="px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-medium">Brand Identity</span>
+                        <span class="px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-medium">Front-end Development</span>
+                        <span class="px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-medium">JavaScript</span>
+                        <span class="px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-medium">React</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Section -->
+    <section id="work" class="section bg-blue-50 py-20 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-3xl font-bold mb-2 text-center">My <span class="text-blue-700">Work</span></h2>
+            <p class="text-gray-600 mb-12 text-center max-w-2xl mx-auto">
+                A selection of my recent projects showcasing both design and development skills.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="work-item group relative overflow-hidden rounded-lg shadow-md bg-white">
+                    <div class="aspect-w-16 aspect-h-12 bg-blue-100 overflow-hidden">
+                        <img src="logo.jpg" alt="Brand Redesign Project" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Logo Design</h3>
+                        <p class="text-gray-600 mb-4">my own logo for personal branding</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">Branding</span>
+                            <span class="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">Logo Design</span>
+                            <span class="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">Style Guide</span>
+                        </div>
+                    </div>
+                  <div class="work-overlay absolute inset-0 bg-blue-700 bg-opacity-80 opacity-0 transition-opacity duration-300 flex items-center justify-center"> 
+    <a href="logo.jpg" target="_blank" class="px-6 py-3 bg-white text-blue-700 font-medium rounded hover:bg-blue-50 transition-colors">
+        View Project
+    </a>
+</div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="work-item group relative overflow-hidden rounded-lg shadow-md bg-white">
+                    <div class="aspect-w-16 aspect-h-12 bg-blue-100 overflow-hidden">
+                        <img src="graphicdesign.jpg" alt="Brand Redesign Project" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Graphic Design</h3>
+                        <p class="text-gray-600 mb-4">My own graphic designs that i like</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">GFX</span>
+                            <span class="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">Candy Style</span>
+                            <span class="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">Design</span>
+                        </div>
+                    </div>
+                    <div class="work-overlay absolute inset-0 bg-blue-700 bg-opacity-80 opacity-0 transition-opacity duration-300 flex items-center justify-center"> 
+    <a href="graphicdesign2.jpg" target="_blank" class="px-6 py-3 bg-white text-blue-700 font-medium rounded hover:bg-blue-50 transition-colors">
+        View Project
+    </a>
+</div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="work-item group relative overflow-hidden rounded-lg shadow-md bg-white">
+                    <div class="aspect-w-16 aspect-h-12 bg-blue-100 overflow-hidden">
+                        <img src="mobileapp.jpg" alt="Brand Redesign Project" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Mobile App Design</h3>
+                        <p class="text-gray-600 mb-4">UI/UX design for a Health Buddy App</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">Mobile Design</span>
+                            <span class="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">Prototyping</span>
+                            <span class="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">User Testing</span>
+                        </div>
+                    </div>
+                    <div class="work-overlay absolute inset-0 bg-blue-700 bg-opacity-80 opacity-0 transition-opacity duration-300 flex items-center justify-center">
+                        <a href="https://yutanakazaki.github.io/Mobile-App/" target="_blank" class="px-6 py-3 bg-white text-blue-700 font-medium rounded hover:bg-blue-50 transition-colors">View Project</a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+    <div class="h-16"></div>
+</div
+            
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section py-20 px-4">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl font-bold mb-2 text-center">Contact <span class="text-blue-700">Me</span></h2>
+            <p class="text-gray-600 mb-12 text-center max-w-2xl mx-auto">
+                Want to order my design and programming services? or maybe just want to be a business partner, contact me below
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="bg-blue-50 p-8 rounded-lg">
+                    <h3 class="text-xl font-bold mb-6">Contact Information</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 rounded-full bg-blue-700 text-white flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="ml-4">
+                                <p class="text-sm text-gray-500">Email</p>
+                                <p class="font-medium">yutanakazaki5@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 rounded-full bg-blue-700 text-white flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="ml-4">
+                                <p class="text-sm text-gray-500">Phone</p>
+                                <p class="font-medium">+62 858 5954 3327</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 rounded-full bg-blue-700 text-white flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="ml-4">
+                                <p class="text-sm text-gray-500">Location</p>
+                                <p class="font-medium">Bangkingan, kec. Lakarsantri, Surabaya, Jawa Timur</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="text-lg font-medium mb-4">Connect</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://www.instagram.com/yutanakazaki21?igsh=YzljYTk1ODg3Zg%3D%3D" class="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-blue-700 hover:text-white transition-colors">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.facebook.com/share/1ARSskJzcq/" class="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-blue-700 hover:text-white transition-colors">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <a href="https://x.com/Dragoknight77?t=B32SjPkp9L2O_6qZ3IyWHA&s=09" class="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-blue-700 hover:text-white transition-colors">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://github.com/YutaNakazaki" class="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-blue-700 hover:text-white transition-colors">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-blue-50 p-8 rounded-lg">
+                    <h3 class="text-xl font-bold mb-6">Send a Message</h3>
+                    <form id="contact-form" class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-700 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-700 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-700 focus:border-transparent"></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" class="w-full bg-blue-700 text-white py-3 rounded-md font-medium hover:bg-blue-800 transition-colors">
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="mb-4">© 2025 YutaNakazaki. All rights reserved.</p>
+            <p class="text-blue-100 text-sm">Graphic Designer & Programmer</p>
+        </div>
+    </footer>
+
+    <script>
+        // Handle navigation active state
+        function setActiveNav(element) {
+            document.querySelectorAll('.nav-link').forEach(el => {
+                el.classList.remove('active');
+            });
+            element.classList.add('active');
+        }
+
+        // Set active nav on scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Handle contact form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Demo form submission
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+            const phone = "6285859543327"; // Ganti dengan nomor kamu
+
+    const text = `Halo, nama saya ${name}%0AEmail: ${email}%0APesan: ${message}`;
+    const whatsappURL = `https://wa.me/${phone}?text=${text}`;
+
+    window.open(whatsappURL, '_blank');
+        });
+        
+        // Set first nav item as active by default
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.nav-link').classList.add('active');
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'94007084b2554e66',t:'MTc0NzI4OTA4My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
